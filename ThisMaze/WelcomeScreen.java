@@ -35,7 +35,7 @@ public class WelcomeScreen extends World
 
         if (Greenfoot.isKeyDown("space"))
         {
-            Greenfoot.setWorld(new Background()); 
+            Greenfoot.setWorld(new MainMenu()); 
 
         }
 
