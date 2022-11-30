@@ -7,5 +7,5 @@ comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Enemy\ wants\ to\ do.\ This\ meth
 comment2.params=
 comment2.target=void\ followPlayer()
 comment3.params=
-comment3.target=void\ destroyPlayer()
+comment3.target=void\ gameRestart()
 numComments=4
