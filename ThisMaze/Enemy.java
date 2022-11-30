@@ -8,7 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
-    
+    public Enemy()
+    {
+        GreenfootImage image = getImage();
+        image.scale(39,40);
+        setImage(image);
+    }
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

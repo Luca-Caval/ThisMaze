@@ -18,7 +18,6 @@ public class Player extends Actor
         movement();
         barrierSpawn();
     }
-    
     public void movement()
     {
         int speed = 5; 
@@ -31,6 +30,7 @@ public class Player extends Actor
         
         if(Greenfoot.isKeyDown("a"))
         {
+            setImage(new GreenfootImage("Player1.png"));
             setLocation (getX() - speed, getY()); 
         }
         
@@ -42,6 +42,7 @@ public class Player extends Actor
         
         if(Greenfoot.isKeyDown("d"))
         {
+            setImage(new GreenfootImage("player.png"));
             setLocation (getX() + speed, getY()); 
         }
         //if(isTouching(tempBarrier.class)) setLocation(startX, startY);
