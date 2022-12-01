@@ -12,16 +12,17 @@ public class PlayGame extends Actor
      * Act - do whatever the PlayGame wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public void act() 
     {
         if (Greenfoot.mouseMoved(this))
         {
-            setImage("Option1_Button_Highlighted.png");
+            setImage("PlayGameButton.png");
         }
 
         if (Greenfoot.mouseMoved(getWorld()))
         {
-            setImage("Option1_Button.png");
+            setImage("PlayGameButton.png");
         }
 
         if (Greenfoot.mouseClicked(this))

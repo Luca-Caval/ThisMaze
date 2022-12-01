@@ -16,9 +16,10 @@ public class MainMenu extends World
     public MainMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 600, 1); 
+        super(871, 828, 1); 
         prepare();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -29,5 +30,27 @@ public class MainMenu extends World
         addObject(playGame,293,287);
         Instructions instructions = new Instructions();
         addObject(instructions,465,551);
+        playGame.setLocation(686,287);
+        removeObject(playGame);
+        removeObject(instructions);
+        PlayGame PlayGame = new PlayGame();
+        addObject(playGame,660,332);
+        playGame.setLocation(634,328);
+        Instructions instructions2 = new Instructions();
+        addObject(instructions2,640,476);
+        instructions2.setLocation(711,483);
+        instructions2.setLocation(605,480);
+        instructions2.setLocation(649,476);
+        instructions2.setLocation(625,488);
+        instructions2.setLocation(621,489);
+        instructions2.setLocation(616,467);
+        instructions2.setLocation(589,534);
+        instructions2.setLocation(654,466);
+        instructions2.setLocation(629,452);
+        instructions2.setLocation(664,458);
+        instructions2.setLocation(629,481);
+        instructions2.setLocation(647,472);
+        instructions2.setLocation(661,468);
+        instructions2.setLocation(638,466);
     }
 }

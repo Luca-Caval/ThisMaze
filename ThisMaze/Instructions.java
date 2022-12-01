@@ -12,16 +12,17 @@ public class Instructions extends Actor
      * Act - do whatever the Instructions wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public void act() 
     {
         if (Greenfoot.mouseMoved(this))
         {
-            setImage("Option2_Button_Highlighted.png");
+            setImage("InstructionsButton.png");
         }
 
         if (Greenfoot.mouseMoved(getWorld()))
         {
-            setImage("Option2_Button.png");
+            setImage("InstructionsButton.png");
         }
 
         if (Greenfoot.mouseClicked(this))
