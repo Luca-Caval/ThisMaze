@@ -15,17 +15,23 @@ public class Player extends Actor
      */
     public void act()
     {
-        movement();
-        barrierSpawn();
+        int speed = 5; 
+        
+
+        if(collision() == false) 
+            movement();
+        if(collision() == true)
+            setLocation(getX()+speed, getY()+speed); 
+        
+            barrierSpawn();
     }
     public void movement()
     {
         int speed = 5; 
-        int startX = getX(), startY = getY();
         
         if(Greenfoot.isKeyDown("w")) 
         {
-            setLocation (getX(), getY() - speed); 
+        setLocation (getX(), getY() - speed); 
         }
         
         if(Greenfoot.isKeyDown("a"))
@@ -45,36 +51,37 @@ public class Player extends Actor
             setImage(new GreenfootImage("player.png"));
             setLocation (getX() + speed, getY()); 
         }
-        //if(isTouching(tempBarrier.class)) setLocation(startX, startY);
+        
         
     }
     
-    public void turnAwayFrom(Actor actor)
-    {
-        turnTowards(actor.getX(), actor.getY());
-        turn(180); 
+    public boolean collision() {
+        if(isTouching(tempBarrier.class))
+            return true; 
+        else
+            return false; 
     }
+    
     public void barrierSpawn()
     {
         if(timer>0)timer--;
-        if (timer ==0 &&Greenfoot.isKeyDown("space"))
+        if (timer == 0 && Greenfoot.isKeyDown("space"))
        {
+           //Creating barrier 
            tempBarrier barrier = new tempBarrier();
-           getWorld().addObject(barrier, getX(), getY());
+           
+           //Grabbing X and Y coordinates for player and telling the game to place a barrier at that location
+           getWorld().addObject(barrier, getX()+3, getY()+3);
+           
+           //Setting timer to 300
            timer=300;
            
        }
     }
-    public void barrierStop() 
+    
+    public void woahBackUp(int speed)
     {
-        if(isTouching(tempBarrier.class) && Greenfoot.isKeyDown("w")) 
-        {
-            Actor barrier = getOneIntersectingObject(tempBarrier.class); 
-            
-            turnAwayFrom(barrier); 
-            move(5); 
-            
-        }
-        
+        turn(180); 
+        move(speed); 
     }
 }

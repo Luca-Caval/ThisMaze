@@ -1,26 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class WelcomeScreen here.
+ * Write a description of class WelcomeWorld here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class WelcomeScreen extends World
+public class WelcomeWorld extends World
 {
-
     double timeWelcomeScreenCreation = System.currentTimeMillis();
-
+    
     /**
      * Constructor for objects of class WelcomeScreen.
      * 
      */
-    public WelcomeScreen()
+    public WelcomeWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 600, 1); 
-        showText("This is place holder and idk", getWidth()/2, 60);
-        showText("Press Space Bar or wait idk like 5 seconds", getWidth()/2, 110);
+        showText("This Maze Contains Dangerous Strangers", getWidth()/2, 60);
+        showText("Press Space Bar", getWidth()/2, 110);
         prepare();
     }
 
