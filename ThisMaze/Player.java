@@ -16,13 +16,18 @@ public class Player extends Actor
     public void act()
     {
         int speed = 5; 
-        
+        int oppDir = -5; 
 
-        if(collision() == false) 
+        if(collisionBarrier() == false) 
             movement();
-        if(collision() == true)
+        if(collisionBarrier() == true)
             setLocation(getX()+speed, getY()+speed); 
-        
+        if(collisionWall() == false) 
+            movement();
+        if(collisionWall() == true)
+            woahBackUp(speed); 
+            
+            
             barrierSpawn();
     }
     public void movement()
@@ -55,8 +60,15 @@ public class Player extends Actor
         
     }
     
-    public boolean collision() {
+    public boolean collisionBarrier() {
         if(isTouching(tempBarrier.class))
+            return true; 
+        else
+            return false; 
+    }
+    
+    public boolean collisionWall() {
+        if(isTouching(Wall1.class))
             return true; 
         else
             return false; 
@@ -81,7 +93,7 @@ public class Player extends Actor
     
     public void woahBackUp(int speed)
     {
-        turn(180); 
-        move(speed); 
+         
+        move(-speed); 
     }
 }
