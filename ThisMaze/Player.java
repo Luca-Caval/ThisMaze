@@ -22,10 +22,7 @@ public class Player extends Actor
             movement();
         if(collisionBarrier() == true)
             setLocation(getX()+speed, getY()+speed); 
-        if(collisionWall() == false) 
-            movement();
-        if(collisionWall() == true)
-            woahBackUp(speed); 
+        
             
             
             barrierSpawn();
@@ -66,13 +63,7 @@ public class Player extends Actor
         else
             return false; 
     }
-    
-    public boolean collisionWall() {
-        if(isTouching(Wall1.class))
-            return true; 
-        else
-            return false; 
-    }
+
     
     public void barrierSpawn()
     {
