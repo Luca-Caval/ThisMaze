@@ -21,7 +21,7 @@ public class Player extends Actor
         if(collisionBarrier() == false) 
             movement();
         if(collisionBarrier() == true)
-            setLocation(getX()+speed, getY()+speed); 
+            setLocation(getX()-speed, getY()-speed); 
         
             
             
@@ -35,6 +35,7 @@ public class Player extends Actor
           setRotation(270);
           move(5);
           collisionWall();
+          collisionGate();
         }
         
         if(Greenfoot.isKeyDown("a"))
@@ -42,6 +43,7 @@ public class Player extends Actor
           setRotation(180);
           move(5); 
           collisionWall();
+          collisionGate();
         }
         
         if(Greenfoot.isKeyDown("s"))
@@ -49,6 +51,7 @@ public class Player extends Actor
           setRotation(90);
           move(5);
           collisionWall();
+          collisionGate();
         }
         
         if(Greenfoot.isKeyDown("d"))
@@ -56,6 +59,7 @@ public class Player extends Actor
           setRotation(0);
           move(5); 
           collisionWall();
+          collisionGate();
         }
         
     }
@@ -64,6 +68,15 @@ public class Player extends Actor
     {
         Actor wall1 = getOneIntersectingObject(Wall.class);
         if(wall1 != null)
+        {
+            move(-5);
+        }
+    }
+    
+      public void collisionGate()
+    {
+        Actor gate = getOneIntersectingObject(Gate.class);
+        if(gate != null)
         {
             move(-5);
         }
@@ -89,7 +102,7 @@ public class Player extends Actor
            tempBarrier barrier = new tempBarrier();
            
            //Grabbing X and Y coordinates for player and telling the game to place a barrier at that location
-           getWorld().addObject(barrier, getX()+3, getY()+3);
+           getWorld().addObject(barrier, getX(), getY());
            
            //Setting timer to 300
            timer=300;
