@@ -27,34 +27,46 @@ public class Player extends Actor
             
             barrierSpawn();
     }
+    
     public void movement()
     {
-        int speed = 5; 
-        
         if(Greenfoot.isKeyDown("w")) 
         {
-        setLocation (getX(), getY() - speed); 
+          setRotation(270);
+          move(5);
+          collisionWall();
         }
         
         if(Greenfoot.isKeyDown("a"))
         {
-            setImage(new GreenfootImage("Player1.png"));
-            setLocation (getX() - speed, getY()); 
+          setRotation(180);
+          move(5); 
+          collisionWall();
         }
         
         if(Greenfoot.isKeyDown("s"))
         {
-            setLocation (getX(), getY() + speed); 
-            
+          setRotation(90);
+          move(5);
+          collisionWall();
         }
         
         if(Greenfoot.isKeyDown("d"))
         {
-            setImage(new GreenfootImage("player.png"));
-            setLocation (getX() + speed, getY()); 
+          setRotation(0);
+          move(5); 
+          collisionWall();
         }
         
-        
+    }
+    
+      public void collisionWall()
+    {
+        Actor wall1 = getOneIntersectingObject(Wall.class);
+        if(wall1 != null)
+        {
+            move(-5);
+        }
     }
     
     public boolean collisionBarrier() {
@@ -63,11 +75,14 @@ public class Player extends Actor
         else
             return false; 
     }
+   
 
     
     public void barrierSpawn()
     {
-        if(timer>0)timer--;
+        if(timer > 0) 
+            timer--;
+        
         if (timer == 0 && Greenfoot.isKeyDown("space"))
        {
            //Creating barrier 
@@ -82,9 +97,6 @@ public class Player extends Actor
        }
     }
     
-    public void woahBackUp(int speed)
-    {
-         
-        move(-speed); 
-    }
+    
+
 }

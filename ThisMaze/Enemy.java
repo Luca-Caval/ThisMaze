@@ -37,7 +37,7 @@ public class Enemy extends Actor
        
        //Stopping enemy movement when met with barrier
        if(isTouching(tempBarrier.class)) 
-           setLocation(startX-1, startY-1);
+           setLocation(startX-1, startY);
 
        
        //Turning towards player so that the AI is constantly point towards it 
