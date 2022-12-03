@@ -15,13 +15,13 @@ public class Player extends Actor
      */
     public void act()
     {
-        int speed = 5; 
+        int speed = 4; 
         int oppDir = -5; 
 
         if(collisionBarrier() == false) 
             movement();
         if(collisionBarrier() == true)
-            setLocation(getX()-speed, getY()-speed); 
+            move(3); 
         
             
             

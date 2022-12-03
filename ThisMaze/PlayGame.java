@@ -28,7 +28,7 @@ public class PlayGame extends Actor
         if (Greenfoot.mouseClicked(this))
         {
 
-            Greenfoot.setWorld(new Background());
+            Greenfoot.setWorld(new lvl1());
 
         }
     }    

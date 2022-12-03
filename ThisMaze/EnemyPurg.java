@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Enemy here.
+ * Write a description of class EnemyPurg here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Enemy extends Actor
+public class EnemyPurg extends Actor
 {
-    public Enemy()
+    public EnemyPurg()
     {
         GreenfootImage image = getImage();
         image.scale(50,50);
@@ -33,7 +33,7 @@ public class Enemy extends Actor
        int startY = getY();
        
        //Having enemy move at a consistent speed of 3
-       move(3); 
+       move(5); 
        
        //Stopping enemy movement when met with barrier
        if(isTouching(tempBarrier.class)) 
@@ -54,6 +54,6 @@ public class Enemy extends Actor
     {   Actor player = (Actor)getWorld().getObjects(Player.class).get(0);
         
         if(isTouching(Player.class))
-        Greenfoot.setWorld(new Plvl1());
+        Greenfoot.setWorld(new GameOver());
     }
 }

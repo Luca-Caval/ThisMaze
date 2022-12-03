@@ -18,8 +18,8 @@ public class WelcomeWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 600, 1); 
-        showText("This Maze Contains Dangerous Strangers", getWidth()/2, 60);
-        showText("Press Space Bar", getWidth()/2, 110);
+        showText("This Maze Contains Dangerous Strangers", getWidth()/2, 400);
+        showText("Press Space Bar", getWidth()/2, 450);
         prepare();
     }
 

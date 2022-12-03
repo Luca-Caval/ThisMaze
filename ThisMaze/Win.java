@@ -8,7 +8,7 @@ import greenfoot.*;
 public class Win extends Actor
 {
 
-    /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
+    //For Level 1 Surface
 
     /**
      * Act - do whatever the Win wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -38,7 +38,7 @@ public class Win extends Actor
      */
     public void transitionToWinWorld()
     {
-        World gameWonWorld =  new  gameWonWorld();
-        Greenfoot.setWorld(gameWonWorld);
+        World lvl2 =  new  lvl2();
+        Greenfoot.setWorld(lvl2);
     }
 }
