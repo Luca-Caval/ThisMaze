@@ -15,8 +15,8 @@ public class Player extends Actor
      */
     public void act()
     {
-        int speed = 4; 
-        int oppDir = -5; 
+        int speed = 3; 
+        int oppDir = -3; 
 
         if(collisionBarrier() == false) 
             movement();
@@ -109,7 +109,6 @@ public class Player extends Actor
            
        }
     }
-    
     
 
 }

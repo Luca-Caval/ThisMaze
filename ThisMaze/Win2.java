@@ -35,5 +35,6 @@ public class Win2 extends Actor
     {
         World lvl3 =  new  lvl3();
         Greenfoot.setWorld(lvl3);
+        Greenfoot.playSound("win.wav"); 
     }
 }

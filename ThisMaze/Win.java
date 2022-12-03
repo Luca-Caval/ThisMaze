@@ -17,6 +17,7 @@ public class Win extends Actor
     {
         if (winCondition() == true) {
             transitionToWinWorld();
+            
         }
     }
 
@@ -40,5 +41,7 @@ public class Win extends Actor
     {
         World lvl2 =  new  lvl2();
         Greenfoot.setWorld(lvl2);
+        Greenfoot.playSound("win.wav"); 
+
     }
 }

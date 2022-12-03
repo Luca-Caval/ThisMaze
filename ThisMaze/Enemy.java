@@ -21,7 +21,7 @@ public class Enemy extends Actor
     public void act()
     {
        followPlayer();
-       gameRestart();
+       nextLevel();
     }
     
     public void followPlayer()
@@ -50,10 +50,12 @@ public class Enemy extends Actor
     }
     
     
-    private void gameRestart()                       //Restarts the world
+    private void nextLevel()                       //Restarts the world
     {   Actor player = (Actor)getWorld().getObjects(Player.class).get(0);
         
-        if(isTouching(Player.class))
-        Greenfoot.setWorld(new Plvl1());
+        if(isTouching(Player.class)){
+            Greenfoot.setWorld(new Plvl1()); 
+            
+        }
     }
 }
